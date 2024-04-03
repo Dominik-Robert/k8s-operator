@@ -1,0 +1,35 @@
+apiVersion: manageables.dorosoft.de/v1alpha1
+kind: People
+metadata:
+  labels:
+    app.kubernetes.io/name: dominik.robert
+    app.kubernetes.io/instance: People-sample
+    app.kubernetes.io/part-of: manager
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: manager
+  name: dominik.robert
+spec:
+  company: FourEnergy GmbH
+  department: IT-Consultants
+  organization: DevOps
+  job: DevOps Consultant
+  firstName: "Dominik"
+  lastName: "Robert"
+  skills:
+    - name: Kubernetes
+      experience: "5y"
+    - name: ElasticStack
+    - name: Ubuntu
+    - name: OMD
+    - name: Naemon
+    - name: Icinga
+    - name: Prometheus
+    - name: Git
+    - name: GitHub
+    - name: Gitlab
+    - name: SQL
+    - name: NoSQL
+    - name: Golang
+    - name: Bash
+    - name: Java
+    - name: C/C++

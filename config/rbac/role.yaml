@@ -1,0 +1,50 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - manageables.dorosoft.de
+  resources:
+  - people
+  verbs:
+  - get
+  - list
+  - patch
+  - update
+- apiGroups:
+  - manageables.dorosoft.de
+  resources:
+  - people/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - manageables.dorosoft.de
+  resources:
+  - projects
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - manageables.dorosoft.de
+  resources:
+  - projects/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - manageables.dorosoft.de
+  resources:
+  - projects/status
+  verbs:
+  - get
+  - patch
+  - update

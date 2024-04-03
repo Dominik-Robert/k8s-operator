@@ -1,0 +1,21 @@
+apiVersion: manageables.dorosoft.de/v1alpha1
+kind: Project
+metadata:
+  labels:
+    app.kubernetes.io/name: project
+    app.kubernetes.io/instance: project-sample
+    app.kubernetes.io/part-of: manager
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: manager
+  name: project-sample2
+spec:
+  company: Bunderdruckerei
+  job: DevOps Consultant
+  openPositions: 5
+  neededSkills:
+    - name: Kubernetes
+      experience: 5y
+    - name: AWS
+      experience: 1y
+    - name: Bash
+      experience: 5y

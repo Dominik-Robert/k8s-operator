@@ -1,0 +1,72 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.11.1
+  creationTimestamp: null
+  name: skills.manageables.dorosoft.de
+spec:
+  group: manageables.dorosoft.de
+  names:
+    kind: Skill
+    listKind: SkillList
+    plural: skills
+    singular: skill
+  scope: Namespaced
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: Skill is the Schema for the skills API
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            properties:
+              alternatives:
+                items:
+                  properties:
+                    alternatives:
+                      x-kubernetes-preserve-unknown-fields: true
+                    description:
+                      type: string
+                    experience:
+                      type: string
+                    fulfilled:
+                      type: boolean
+                    fulfilledByAlternative:
+                      type: boolean
+                    name:
+                      type: string
+                  required:
+                  - name
+                  type: object
+                type: array
+              description:
+                type: string
+              experience:
+                type: string
+              name:
+                type: string
+            required:
+            - name
+            type: object
+          status:
+            description: SkillStatus defines the observed state of Skill
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}

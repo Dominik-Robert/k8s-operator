@@ -1,0 +1,159 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.11.1
+  creationTimestamp: null
+  name: projects.manageables.dorosoft.de
+spec:
+  group: manageables.dorosoft.de
+  names:
+    kind: Project
+    listKind: ProjectList
+    plural: projects
+    singular: project
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .spec.company
+      name: LastName
+      type: string
+    - jsonPath: .spec.job
+      name: Job
+      type: string
+    - jsonPath: .spec.openPositions
+      name: Job
+      type: string
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: Project is the Schema for the projects API
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: ProjectSpec defines the desired state of Project
+            properties:
+              company:
+                description: company specific
+                type: string
+              department:
+                type: string
+              description:
+                type: string
+              job:
+                type: string
+              neededSkills:
+                items:
+                  properties:
+                    alternatives:
+                      x-kubernetes-preserve-unknown-fields: true
+                    description:
+                      type: string
+                    experience:
+                      type: string
+                    fulfilled:
+                      type: boolean
+                    fulfilledByAlternative:
+                      type: boolean
+                    name:
+                      type: string
+                  required:
+                  - name
+                  type: object
+                type: array
+              openPositions:
+                description: Buzzwords
+                type: integer
+              optionalSkills:
+                items:
+                  properties:
+                    alternatives:
+                      x-kubernetes-preserve-unknown-fields: true
+                    description:
+                      type: string
+                    experience:
+                      type: string
+                    fulfilled:
+                      type: boolean
+                    fulfilledByAlternative:
+                      type: boolean
+                    name:
+                      type: string
+                  required:
+                  - name
+                  type: object
+                type: array
+              organization:
+                type: string
+            type: object
+          status:
+            description: ProjectStatus defines the observed state of Project
+            properties:
+              possiblePeople:
+                items:
+                  description: 'EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
+                    NOTE: json tags are required.  Any new fields you add must have
+                    json tags for the fields to be serialized.'
+                  properties:
+                    percentageStrict:
+                      type: string
+                    percentageWithoutAlternatives:
+                      type: string
+                    percentageWithoutExperience:
+                      type: string
+                    personName:
+                      type: string
+                    skills:
+                      items:
+                        properties:
+                          experienceFulfilled:
+                            type: boolean
+                          fulfilledByAlternative:
+                            type: boolean
+                          skillAvailable:
+                            type: boolean
+                          skillAvailableByAlternative:
+                            type: boolean
+                          skillIsAlternative:
+                            type: boolean
+                          skillSpecs:
+                            properties:
+                              alternatives:
+                                x-kubernetes-preserve-unknown-fields: true
+                              description:
+                                type: string
+                              experience:
+                                type: string
+                              fulfilled:
+                                type: boolean
+                              fulfilledByAlternative:
+                                type: boolean
+                              name:
+                                type: string
+                            required:
+                            - name
+                            type: object
+                        type: object
+                      type: array
+                  type: object
+                type: array
+            required:
+            - possiblePeople
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}

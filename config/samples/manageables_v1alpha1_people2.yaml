@@ -1,0 +1,25 @@
+apiVersion: manageables.dorosoft.de/v1alpha1
+kind: People
+metadata:
+  labels:
+    app.kubernetes.io/name: florian.geldmacher
+    app.kubernetes.io/instance: People-sample
+    app.kubernetes.io/part-of: manager
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: manager
+  name: florian.geldmacher
+spec:
+  company: FourEnergy GmbH
+  department: IT-Consultants
+  organization: DevOps
+  job: DevOps Consultant
+  firstName: "Florian"
+  lastName: "Geldmacher"
+  skills:
+    - name: Kubernetes
+    - name: ElasticStack
+    - name: RedHat
+    - name: Git
+    - name: GitHub
+    - name: Gitlab
+    - name: AWS

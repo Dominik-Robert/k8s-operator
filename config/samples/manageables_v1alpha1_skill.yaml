@@ -1,0 +1,106 @@
+apiVersion: manageables.dorosoft.de/v1alpha1
+kind: Skill
+metadata:
+  labels:
+    app.kubernetes.io/name: skill
+    app.kubernetes.io/instance: skill-sample
+    app.kubernetes.io/part-of: manager
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: manager
+  name: kubernetes
+spec:
+  name: kubernetes
+  alternatives:
+    - name: openShift
+    - name: rancher
+---
+apiVersion: manageables.dorosoft.de/v1alpha1
+kind: Skill
+metadata:
+  labels:
+    app.kubernetes.io/name: skill
+    app.kubernetes.io/instance: skill-sample
+    app.kubernetes.io/part-of: manager
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: manager
+  name: aws
+spec:
+  name: aws
+---
+apiVersion: manageables.dorosoft.de/v1alpha1
+kind: Skill
+metadata:
+  labels:
+    app.kubernetes.io/name: skill
+    app.kubernetes.io/instance: skill-sample
+    app.kubernetes.io/part-of: manager
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: manager
+  name: gcp
+spec:
+  name: gcp
+---
+apiVersion: manageables.dorosoft.de/v1alpha1
+kind: Skill
+metadata:
+  labels:
+    app.kubernetes.io/name: skill
+    app.kubernetes.io/instance: skill-sample
+    app.kubernetes.io/part-of: manager
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: manager
+  name: azure
+spec:
+  name: azure
+---
+apiVersion: manageables.dorosoft.de/v1alpha1
+kind: Skill
+metadata:
+  labels:
+    app.kubernetes.io/name: skill
+    app.kubernetes.io/instance: skill-sample
+    app.kubernetes.io/part-of: manager
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: manager
+  name: prometheus
+spec:
+  name: prometheus
+---
+apiVersion: manageables.dorosoft.de/v1alpha1
+kind: Skill
+metadata:
+  labels:
+    app.kubernetes.io/name: skill
+    app.kubernetes.io/instance: skill-sample
+    app.kubernetes.io/part-of: manager
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: manager
+  name: omd
+spec:
+  name: omd
+---
+apiVersion: manageables.dorosoft.de/v1alpha1
+kind: Skill
+metadata:
+  labels:
+    app.kubernetes.io/name: skill
+    app.kubernetes.io/instance: skill-sample
+    app.kubernetes.io/part-of: manager
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: manager
+  name: bash
+spec:
+  name: bash
+---
+apiVersion: manageables.dorosoft.de/v1alpha1
+kind: Skill
+metadata:
+  labels:
+    app.kubernetes.io/name: skill
+    app.kubernetes.io/instance: skill-sample
+    app.kubernetes.io/part-of: manager
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: manager
+  name: python
+spec:
+  name: python
